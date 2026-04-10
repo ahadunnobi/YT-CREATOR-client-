@@ -4,15 +4,21 @@ import { Search, Filter, Play, Eye, Calendar } from 'lucide-react';
 
 const Videos = () => {
   const [activeCategory, setActiveCategory] = useState('All');
-  const categories = ['All', 'Coding', 'Design', 'AI', 'Vlogs'];
+  const categories = ['All', 'Pranks', 'Comedy', 'Sonic Community'];
 
   const allVideos = [
-    { id: 1, title: 'The Future of AI: What You Need to Know', category: 'AI', thumbnail: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80', views: '1.2M', date: '2 days ago' },
-    { id: 2, title: 'How I Built My Dream Setup 2026', category: 'Design', thumbnail: 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=800&q=80', views: '850K', date: '1 week ago' },
-    { id: 3, title: 'Coding for 24 Hours Straight', category: 'Coding', thumbnail: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80', views: '2.1M', date: '3 weeks ago' },
-    { id: 4, title: 'React Server Components Explained', category: 'Coding', thumbnail: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=800&q=80', views: '450K', date: '1 month ago' },
-    { id: 5, title: 'A Day in the Life of a Tech YouTuber', category: 'Vlogs', thumbnail: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80', views: '320K', date: '1 month ago' },
-    { id: 6, title: 'Stop Using Traditional CSS!', category: 'Design', thumbnail: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=800&q=80', views: '1.5M', date: '2 months ago' },
+    { id: 'sGLCtRQg1vc', title: 'Wild Broken Chair Prank', category: 'Pranks', thumbnail: 'https://img.youtube.com/vi/sGLCtRQg1vc/maxresdefault.jpg', views: '1.2M', date: 'Just now' },
+    { id: '0L79Lmou128', title: 'Magic Seat 💢', category: 'Comedy', thumbnail: 'https://img.youtube.com/vi/0L79Lmou128/maxresdefault.jpg', views: '850K', date: '1 day ago' },
+    { id: 'JyKH1swn4jI', title: 'Why Amy is Missing', category: 'Sonic Community', thumbnail: 'https://img.youtube.com/vi/JyKH1swn4jI/maxresdefault.jpg', views: '2.1M', date: '3 days ago' },
+    { id: 'PfcRNC65jFo', title: 'What did Sonic do to everyone?', category: 'Sonic Community', thumbnail: 'https://img.youtube.com/vi/PfcRNC65jFo/maxresdefault.jpg', views: '1.5M', date: '5 days ago' },
+    { id: 'BJWS1PhmcW8', title: 'Sonic is scared 😁', category: 'Sonic Community', thumbnail: 'https://img.youtube.com/vi/BJWS1PhmcW8/maxresdefault.jpg', views: '900K', date: '1 week ago' },
+    { id: 'VjcmnG1NOgY', title: 'Why did Amy run away?', category: 'Sonic Community', thumbnail: 'https://img.youtube.com/vi/VjcmnG1NOgY/maxresdefault.jpg', views: '1.8M', date: '1 week ago' },
+    { id: 'pp9UBD3E6ag', title: 'What is Sonic phone password?', category: 'Sonic Community', thumbnail: 'https://img.youtube.com/vi/pp9UBD3E6ag/maxresdefault.jpg', views: '3.2M', date: '2 weeks ago' },
+    { id: 'slyu3JmY8u0', title: 'What are they digging up?', category: 'Sonic Community', thumbnail: 'https://img.youtube.com/vi/slyu3JmY8u0/maxresdefault.jpg', views: '1.1M', date: '2 weeks ago' },
+    { id: 'LnRsyyjv-u4', title: 'Really Confusing 😁', category: 'Comedy', thumbnail: 'https://img.youtube.com/vi/LnRsyyjv-u4/maxresdefault.jpg', views: '700K', date: '3 weeks ago' },
+    { id: 'FfWSgcpYhQU', title: 'FiAAaaaaa #Comedy', category: 'Comedy', thumbnail: 'https://img.youtube.com/vi/FfWSgcpYhQU/maxresdefault.jpg', views: '500K', date: '1 month ago' },
+    { id: 'nEne9Uuq2TQ', title: 'Power of Love #Comedy', category: 'Comedy', thumbnail: 'https://img.youtube.com/vi/nEne9Uuq2TQ/maxresdefault.jpg', views: '1.3M', date: '1 month ago' },
+    { id: 'yEE_EXO6K6M', title: 'Wait for it... #Comedy', category: 'Comedy', thumbnail: 'https://img.youtube.com/vi/yEE_EXO6K6M/maxresdefault.jpg', views: '4.5M', date: '2 months ago' },
   ];
 
   const filteredVideos = activeCategory === 'All' 
@@ -24,8 +30,8 @@ const Videos = () => {
       <section>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h1 className="gradient-text" style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>Video Archive</h1>
-            <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem' }}>Explore my full catalog of technical tutorials and creative insights.</p>
+            <h1 className="hero-title gradient-text">Creative Archive</h1>
+            <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem' }}>Explore my full catalog of cinematic stories and creative insights.</p>
           </div>
 
           {/* Search and Filter */}
@@ -63,7 +69,7 @@ const Videos = () => {
           </div>
 
           {/* Video Grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2.5rem' }}>
+          <div className="auto-grid">
             {filteredVideos.map((video, index) => (
               <motion.div
                 key={video.id}
@@ -71,7 +77,8 @@ const Videos = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 }}
                 className="glass video-card"
-                style={{ borderRadius: '24px', overflow: 'hidden' }}
+                style={{ borderRadius: '24px', overflow: 'hidden', cursor: 'pointer' }}
+                onClick={() => window.open(`https://www.youtube.com/watch?v=${video.id}`, '_blank')}
               >
                 <div style={{ position: 'relative', height: '200px' }}>
                   <img src={video.thumbnail} alt={video.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -85,7 +92,7 @@ const Videos = () => {
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
                     <span style={{ fontSize: '0.75rem', background: 'rgba(168, 85, 247, 0.2)', color: 'var(--accent-primary)', padding: '0.2rem 0.6rem', borderRadius: '6px', fontWeight: 'bold' }}>{video.category}</span>
                   </div>
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', lineHeight: '1.4', height: '3.5rem', overflow: 'hidden' }}>{video.title}</h3>
+                  <h3 className="card-title" style={{ height: '3.5rem', overflow: 'hidden' }}>{video.title}</h3>
                   <div style={{ marginTop: '1rem', display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                       <Eye size={16} /> {video.views}

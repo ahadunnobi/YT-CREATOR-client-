@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, Code, Globe, MessageSquare } from 'lucide-react';
+import { Clapperboard, Film, Camera, PlayCircle } from 'lucide-react';
 
 const About = () => {
   const achievements = [
-    { icon: <Award className="text-purple-400" />, title: '1.2M Subscribers', description: 'Building a global tech community.' },
-    { icon: <Code className="text-blue-400" />, title: 'Full-Stack Expert', description: '10+ years of engineering experience.' },
-    { icon: <Globe className="text-green-400" />, title: 'Global Impact', description: 'Viewers from 150+ countries.' },
-    { icon: <MessageSquare className="text-red-400" />, title: 'Active Mentor', description: 'Helping thousands land tech jobs.' },
+    { icon: <Film className="text-purple-400" />, title: 'Viral King', description: 'Reaching millions through high-energy shorts and trends.' },
+    { icon: <Clapperboard className="text-blue-400" />, title: 'Trend Creator', description: 'Defining the next wave of viral prank entertainment.' },
+    { icon: <PlayCircle className="text-green-400" />, title: 'Sonic Universe', description: 'Crafting unique character-based comedy for a global niche.' },
+    { icon: <Camera className="text-red-400" />, title: 'Fun of USA', description: 'Highlighting American culture through an entertaining lens.' },
   ];
 
   return (
@@ -21,13 +21,13 @@ const About = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h1 className="gradient-text" style={{ fontSize: '4rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>The Story Behind The Code</h1>
+              <h1 className="hero-title gradient-text">The Face Behind Fun of USA</h1>
               <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: 'var(--text-muted)', marginBottom: '2rem' }}>
-                Hey, I'm ARAFATUN NOBI. I started this journey with a single purpose: to make high-end technology accessible to everyone. 
-                What began as a small hobby project in my bedroom has now grown into a community of over 1.2 million passionate developers and tech enthusiasts.
+                Hey, I'm ARAFATUN NOBI. My journey as a content creator is fueled by a simple mission: to bring a smile to my audience through high-energy entertainment and viral pranks. 
+                As the face of "Fun of USA," I specialize in capturing the humor in everyday life and exploring the unique dynamics of character-driven comedy.
               </p>
               <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: 'var(--text-muted)' }}>
-                I believe that everyone should have the opportunity to build the future. That's why I dedicate my life to creating free, premium educational content that bridges the gap between theory and real-world application.
+                With over 120 million views and a growing community, I dedicate my craft to redefining short-form storytelling. Whether it's a perfectly timed prank or a deep dive into the Sonic community, my goal is always the same—to create authentic, engaging content that connects with people globally.
               </p>
             </motion.div>
 
@@ -40,8 +40,8 @@ const About = () => {
               style={{ borderRadius: '32px', overflow: 'hidden', height: '500px' }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" 
-                alt="Working" 
+                src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80" 
+                alt="Cinematic Work" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </motion.div>
@@ -52,7 +52,7 @@ const About = () => {
       {/* Achievement Grid */}
       <section style={{ margin: '5rem 0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+          <div className="auto-grid">
             {achievements.map((item, index) => (
               <motion.div
                 key={index}
@@ -77,19 +77,19 @@ const About = () => {
       {/* Brand Identity / Values */}
       <section style={{ padding: '5rem 0', background: 'rgba(168, 85, 247, 0.05)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '4rem' }}>My <span className="gradient-text">Values</span></h2>
+          <h2 className="section-title" style={{ marginBottom: '4rem' }}>My <span className="gradient-text">Values</span></h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
             <div style={{ textAlign: 'left' }}>
-              <h4 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--accent-primary)', marginBottom: '1rem' }}>01. Quality Over Quantity</h4>
-              <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>Every video, line of code, and tutorial is crafted with meticulous attention to detail. I don't just teach "how" – I explain the "why".</p>
+              <h4 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--accent-primary)', marginBottom: '1rem' }}>01. Instant Engagement</h4>
+              <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>The first 3 seconds are everything. I focus on high-impact hooks that capture attention and keep viewers engaged until the very end.</p>
             </div>
             <div style={{ textAlign: 'left' }}>
-              <h4 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--accent-secondary)', marginBottom: '1rem' }}>02. Radical Transparency</h4>
-              <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>I share my successes and my failures. The goal is to provide a realistic view of what it takes to succeed in the tech industry.</p>
+              <h4 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--accent-secondary)', marginBottom: '1rem' }}>02. Community First</h4>
+              <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>My content is a conversation. I listen to my followers and create the challenges, reactions, and stories they want to see.</p>
             </div>
             <div style={{ textAlign: 'left' }}>
-              <h4 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--accent-primary)', marginBottom: '1rem' }}>03. Community First</h4>
-              <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>The platform exists for you. I listen to feedback, answer questions, and build content based on what the community needs most.</p>
+              <h4 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--accent-primary)', marginBottom: '1rem' }}>03. Viral Innovation</h4>
+              <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>Staying ahead of trends isn't enough—I aim to set them. I'm constantly experimenting with new formats to keep the content fresh and unexpected.</p>
             </div>
           </div>
         </div>

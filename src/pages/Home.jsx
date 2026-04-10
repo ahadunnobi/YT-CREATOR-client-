@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const stats = [
-    { label: 'Subscribers', value: '1.2M', icon: <Users className="text-purple-400" /> },
-    { label: 'Total Views', value: '85M+', icon: <Eye className="text-blue-400" /> },
-    { label: 'Videos', value: '450+', icon: <Video className="text-red-400" /> },
+    { label: 'Followers', value: '500K+', icon: <Users className="text-purple-400" /> },
+    { label: 'Total Views', value: '120M+', icon: <Eye className="text-blue-400" /> },
+    { label: 'Stories', value: '150+', icon: <Video className="text-red-400" /> },
   ];
 
   const featuredVideos = [
-    { id: 1, title: 'The Future of AI: What You Need to Know', thumbnail: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80', views: '1.2M' },
-    { id: 2, title: 'How I Built My Dream Setup 2026', thumbnail: 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=800&q=80', views: '850K' },
-    { id: 3, title: 'Coding for 24 Hours Straight', thumbnail: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80', views: '2.1M' },
+    { id: 'sGLCtRQg1vc', title: 'Wild Broken Chair Prank', thumbnail: 'https://img.youtube.com/vi/sGLCtRQg1vc/maxresdefault.jpg', views: '1.2M' },
+    { id: '0L79Lmou128', title: 'Magic Seat 💢', thumbnail: 'https://img.youtube.com/vi/0L79Lmou128/maxresdefault.jpg', views: '850K' },
+    { id: 'JyKH1swn4jI', title: 'Why Amy is Missing', thumbnail: 'https://img.youtube.com/vi/JyKH1swn4jI/maxresdefault.jpg', views: '2.1M' },
   ];
 
   return (
@@ -41,9 +41,9 @@ const Home = () => {
               transition={{ delay: 0.2 }}
               style={{ marginTop: '1.5rem' }}
             >
-              <h1 style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>ARAFATUN<span className="gradient-text">NOBI</span></h1>
-              <p style={{ color: 'var(--text-muted)', fontSize: '1.25rem', maxWidth: '600px', margin: '0 auto' }}>
-                Tech YouTuber exploring the boundaries of AI, Code, and Creativity.
+              <h1 className="hero-title">ARAFATUN <span className="gradient-text">NOBI</span></h1>
+              <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto' }} className="card-title">
+                Social Media Content Creator & Director capturing life's stories through a cinematic lens.
               </p>
               
               <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '2.5rem' }}>
@@ -88,13 +88,13 @@ const Home = () => {
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem' }}>
             <div>
-              <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold' }}>Latest <span className="gradient-text">Content</span></h2>
+              <h2 className="sub-title">Latest <span className="gradient-text">Content</span></h2>
               <p style={{ color: 'var(--text-muted)', marginTop: '0.5rem' }}>Stay updated with my most recent explorations.</p>
             </div>
             <Link to="/videos" className="btn btn-outline">View All</Link>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
+          <div className="auto-grid">
             {featuredVideos.map((video, i) => (
               <motion.div 
                 key={video.id}
@@ -104,6 +104,7 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="glass"
                 style={{ borderRadius: '24px', overflow: 'hidden', cursor: 'pointer' }}
+                onClick={() => window.open(`https://www.youtube.com/watch?v=${video.id}`, '_blank')}
               >
                 <div style={{ position: 'relative', height: '200px' }}>
                   <img src={video.thumbnail} alt={video.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -115,7 +116,7 @@ const Home = () => {
                 </div>
                 <div style={{ padding: '1.5rem' }}>
                   <span style={{ fontSize: '0.8rem', color: 'var(--accent-secondary)', fontWeight: 'bold', textTransform: 'uppercase' }}>New Video</span>
-                  <h3 style={{ marginTop: '0.5rem', fontSize: '1.25rem', lineHeight: '1.4' }}>{video.title}</h3>
+                  <h3 className="card-title" style={{ marginTop: '0.5rem' }}>{video.title}</h3>
                   <div style={{ marginTop: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
                     <Eye size={16} /> {video.views} views
                   </div>
@@ -130,7 +131,7 @@ const Home = () => {
       <section style={{ marginBottom: '5rem' }}>
         <div className="container">
           <div className="glass" style={{ padding: '5rem 2rem', borderRadius: '48px', textAlign: 'center', background: 'linear-gradient(rgba(168, 85, 247, 0.1), rgba(0,0,0,0))' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>Ready to <span className="gradient-text">Collaborate?</span></h2>
+            <h2 className="section-title" style={{ marginBottom: '1.5rem' }}>Ready to <span className="gradient-text">Collaborate?</span></h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.25rem', maxWidth: '700px', margin: '0 auto', marginBottom: '3rem' }}>
               I'm always looking for innovative projects and brands to partner with. Let's create something extraordinary.
             </p>

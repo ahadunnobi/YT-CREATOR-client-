@@ -111,3 +111,68 @@ button {
 section {
   padding: 5rem 0;
 }
+
+/* Responsive Typography and Utilities */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.sub-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+/* Base Grids */
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 5rem;
+}
+
+/* Large Devices */
+@media (max-width: 1024px) {
+  .hero-title { font-size: 3rem !important; }
+  .section-title { font-size: 2.5rem !important; }
+  .sub-title { font-size: 2.2rem !important; }
+  .contact-grid { gap: 3rem; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
+}
+
+/* Medium Devices */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.5rem !important; }
+  .section-title { font-size: 2.2rem !important; }
+  .sub-title { font-size: 2rem !important; }
+  section { padding: 4rem 0; }
+  .auto-grid { gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; }
+  .contact-grid { gap: 2rem; grid-template-columns: 1fr; }
+}
+
+/* Small Devices */
+@media (max-width: 640px) {
+  .hero-title { font-size: 2rem !important; }
+  .section-title { font-size: 1.8rem !important; }
+  .sub-title { font-size: 1.5rem !important; }
+  .card-title { font-size: 1.1rem; }
+  section { padding: 3rem 0; }
+  .auto-grid { gap: 1.25rem; grid-template-columns: 1fr !important; }
+  .btn { padding: 0.6rem 1.2rem; font-size: 0.95rem !important; }
+}
