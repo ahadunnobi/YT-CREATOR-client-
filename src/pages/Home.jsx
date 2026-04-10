@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Eye, Video, ArrowRight, Play } from 'lucide-react';
+import { Users, Eye, Video, ArrowRight, Play, Plane } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -47,8 +47,8 @@ const Home = () => {
               </p>
               
               <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '2.5rem' }}>
-                <a href="https://www.youtube.com/@Arafatven1" target="_blank" className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.1rem' }}>
-                  <Play size={20} fill="white" /> Subscribe Now
+                <a href="https://www.youtube.com/@Arafatven1" target="_blank" className="btn btn-primary btn-takeoff" style={{ padding: '1rem 2rem', fontSize: '1.1rem', overflow: 'hidden' }}>
+                  <Plane size={20} className="takeoff-icon" /> Subscribe Now
                 </a>
                 <Link to="/videos" className="btn btn-outline" style={{ padding: '1rem 2rem', fontSize: '1.1rem' }}>
                   Latest Content <ArrowRight size={20} />

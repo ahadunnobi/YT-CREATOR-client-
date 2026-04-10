@@ -5,6 +5,7 @@ const Layout = ({ children }) => {
   return (
     <div className="layout">
       <Navbar />
+      <div className="floating-subscribe gradient-text">PLEASE SUBSCRIBE</div>
       <main>
         {children}
       </main>
