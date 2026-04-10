@@ -60,20 +60,29 @@ const Contact = () => {
     <div className="contact-page" style={{ paddingTop: '8rem' }}>
       <section>
         <div className="container" style={{ maxWidth: '1200px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '5rem' }}>
+          <div className="contact-grid">
             
-            {/* Contact Info */}
+            {/* 1. Intro Section */}
             <motion.div
+              className="contact-intro"
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="gradient-text" style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>Let's Work Together</h1>
-              <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', marginBottom: '3rem', lineHeight: '1.6' }}>
+              <h1 className="hero-title gradient-text">Let's Work Together</h1>
+              <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', marginBottom: '2rem', lineHeight: '1.6' }}>
                 Have a project in mind or want to discuss a potential sponsorship? Fill out the form or reach out directly via socials.
               </p>
+            </motion.div>
 
-              <div style={{ marginBottom: '4rem' }}>
+            {/* 2. Email Section */}
+            <motion.div
+              className="contact-email"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <div style={{ marginBottom: '2rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '1.5rem' }}>
                   <div style={{ background: 'rgba(168, 85, 247, 0.1)', padding: '1rem', borderRadius: '12px', color: 'var(--accent-primary)' }}>
                     <Mail size={24} />
@@ -84,9 +93,17 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
+            </motion.div>
 
+            {/* 3. Socials Section */}
+            <motion.div
+              className="contact-socials"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <h4 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Follow My Journey</h4>
-              <div style={{ display: 'flex', gap: '1rem' }}>
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 {socialLinks.map((social) => (
                   <a 
                     key={social.label}
@@ -109,12 +126,12 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            {/* Contact Form */}
+            {/* 4. Contact Form Section */}
             <motion.div
+              className="contact-form glass"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="glass"
+              transition={{ duration: 0.6, delay: 0.3 }}
               style={{ padding: '3rem', borderRadius: '32px' }}
             >
               {formState === 'success' ? (
@@ -127,7 +144,7 @@ const Contact = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
+                  <div className="auto-grid" style={{ marginBottom: '1.5rem', gap: '1.5rem' }}>
                     <div className="form-group">
                       <label style={{ display: 'block', marginBottom: '0.75rem', fontSize: '0.9rem', color: 'var(--text-muted)' }}>Name</label>
                       <input 

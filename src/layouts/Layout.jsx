@@ -16,14 +16,14 @@ const Layout = ({ children }) => {
               <p style={{ color: 'var(--text-muted)', marginTop: '0.5rem' }}>Bringing the fun of USA lifestyle and viral entertainment to you.</p>
             </div>
             <div style={{ display: 'flex', gap: '1.5rem', color: 'var(--text-muted)' }}>
-              <a href="#" className="footer-link">YouTube</a>
-              <a href="#">Twitter</a>
-              <a href="#">Instagram</a>
-              <a href="#">LinkedIn</a>
+              <a href="https://youtube.com/@Arafatven1" target="_blank" rel="noopener noreferrer">YouTube</a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://github.com/arafatven1" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
           </div>
           <div style={{ marginTop: '3rem', paddingTop: '1.5rem', borderTop: '1px solid var(--glass-border)', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.875rem' }}>
-            © 2026 Arafatun Nobi. All rights reserved.
+            © {new Date().getFullYear()} <a href="https://github.com/ahadunnobi" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none', fontWeight: 'bold' }} onMouseOver={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseOut={(e) => e.target.style.color = 'inherit'}>Ahadun Nobi</a>. All rights reserved.
           </div>
         </div>
       </footer>

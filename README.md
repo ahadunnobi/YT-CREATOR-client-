@@ -7,7 +7,7 @@ A premium, high-impact personal portfolio website designed for **Arafatun Nobi**
 ---
 
 ## 🚀 Live Demo
-**[View Live Site]https://arafatunnobi.netlify.app/)** 
+**[View Live Site](https://arafatunnobi.netlify.app/)**
 
 ---
 
