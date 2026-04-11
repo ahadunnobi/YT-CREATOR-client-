@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Rocket, Play } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const MotionLink = motion(Link);
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -24,35 +26,85 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass py-3' : 'py-6'}`}>
+    <motion.nav 
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'py-3' : 'py-6'}`}
+      animate={scrolled ? {
+        backgroundColor: [
+          'rgba(168, 85, 247, 0.15)', // Purple
+          'rgba(59, 130, 246, 0.15)', // Blue 
+          'rgba(16, 185, 129, 0.15)', // Green
+          'rgba(239, 68, 68, 0.15)',  // Red
+          'rgba(168, 85, 247, 0.15)'  // Back to Purple
+        ],
+        borderBottom: [
+          '1px solid rgba(168, 85, 247, 0.3)',
+          '1px solid rgba(59, 130, 246, 0.3)',
+          '1px solid rgba(16, 185, 129, 0.3)',
+          '1px solid rgba(239, 68, 68, 0.3)',
+          '1px solid rgba(168, 85, 247, 0.3)'
+        ]
+      } : { 
+        backgroundColor: 'rgba(0, 0, 0, 0)',
+        borderBottom: '1px solid transparent'
+      }}
+      transition={scrolled ? { duration: 10, repeat: Infinity, ease: 'linear' } : { duration: 0.3 }}
+      style={{
+        backdropFilter: scrolled ? 'blur(16px)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'none',
+        boxShadow: scrolled ? '0 4px 30px rgba(0, 0, 0, 0.1)' : 'none'
+      }}
+    >
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <div style={{ width: '40px', height: '40px', borderRadius: '10px', overflow: 'hidden', border: '2px solid var(--accent-secondary)' }}>
             <img src="/channels4_profile.jpg" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
-          <span style={{ fontSize: '1.25rem', fontWeight: 'bold', letterSpacing: '-0.025em' }}>ARAFATUN NOBI</span>
+          <span style={{ fontFamily: '"Bebas Neue", sans-serif', fontSize: '1.75rem', letterSpacing: '0.05em' }}>ARAFATUN NOBI</span>
         </Link>
 
         {/* Desktop Nav */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }} className="desktop-nav">
           {navLinks.map((link) => (
-            <Link 
+            <MotionLink 
               key={link.name} 
               to={link.path}
               style={{ 
-                color: location.pathname === link.path ? 'var(--accent-primary)' : 'var(--text-muted)',
+                color: location.pathname === link.path ? 'var(--accent-primary)' : 'var(--text-main)',
                 fontWeight: location.pathname === link.path ? '600' : '400',
                 fontSize: '0.95rem'
               }}
               className="nav-link"
+              whileHover={link.name === 'Home' ? { scale: 1.1, color: 'var(--accent-primary)' } : { scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              animate={link.name === 'Home' ? { y: [0, -4, 0] } : {}}
+              transition={link.name === 'Home' ? { duration: 2, repeat: Infinity, ease: 'easeInOut' } : {}}
             >
               {link.name}
-            </Link>
+            </MotionLink>
           ))}
-          <a href="https://www.youtube.com/@Arafatven1" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.6rem 1.2rem' }}>
-            <Rocket size={18} />
+          <motion.a 
+            href="https://www.youtube.com/@Arafatven1" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn btn-primary" 
+            style={{ padding: '0.6rem 1.2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            animate={{ 
+              boxShadow: ['0 0 0px var(--accent-secondary)', '0 0 20px var(--accent-secondary)', '0 0 0px var(--accent-secondary)']
+            }}
+            transition={{
+              boxShadow: { duration: 2, repeat: Infinity, ease: 'easeInOut' }
+            }}
+          >
+            <motion.div
+              animate={{ rotate: [0, 15, -15, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 1 }}
+            >
+              <Rocket size={18} />
+            </motion.div>
             Subscribe
-          </a>
+          </motion.a>
         </div>
         {/* Mobile Toggle */}
         <button 
@@ -99,7 +151,7 @@ const Navbar = () => {
         .w-full { width: 100%; }
         .z-50 { z-index: 50; }
       `}</style>
-    </nav>
+    </motion.nav>
   );
 };
 
