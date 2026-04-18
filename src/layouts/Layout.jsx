@@ -8,21 +8,29 @@ const Layout = ({ children }) => {
   return (
     <div className="layout">
       <Navbar />
-      <div className="floating-subscribe gradient-text" style={{ display: 'flex' }}>
+      <div className="floating-subscribe" style={{ display: 'flex' }}>
         {subscribeText.split("").map((char, index) => (
           <motion.span
             key={index}
+            className="gradient-text"
             animate={{ 
-              y: [0, -12, 0],
-              rotate: [0, 8, -8, 0]
+              y: [0, -15, 0],
+              rotate: [0, 10, -10, 0]
             }}
             transition={{ 
-              duration: 1.2, 
+              duration: 1.5, 
               repeat: Infinity, 
               delay: index * 0.1,
               ease: "easeInOut"
             }}
-            style={{ display: 'inline-block', whiteSpace: 'pre' }}
+            style={{ 
+              display: 'inline-block', 
+              whiteSpace: 'pre',
+              fontSize: '2.5rem', 
+              fontWeight: '900',
+              fontFamily: '"Bebas Neue", sans-serif',
+              letterSpacing: '0.05em'
+            }}
           >
             {char}
           </motion.span>

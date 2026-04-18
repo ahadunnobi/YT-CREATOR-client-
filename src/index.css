@@ -230,32 +230,30 @@ section {
 /* Floating Animation (Right to Left) */
 .floating-subscribe {
   position: fixed;
-  bottom: 15%;
-  color: rgba(255, 255, 255, 0.4);
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
+  bottom: 12%;
+  right: 0;
   white-space: nowrap;
-  animation: moveRightToLeft 18s linear infinite;
-  z-index: 10;
+  animation: moveRightToLeft 20s linear infinite;
+  z-index: 9999; /* ensure it is on top */
   pointer-events: none;
   user-select: none;
+  display: flex;
+  gap: 2px;
 }
 
 @keyframes moveRightToLeft {
   0% {
-    right: -300px;
+    transform: translateX(100%);
     opacity: 0;
   }
-  5% {
+  10% {
     opacity: 1;
   }
-  95% {
+  90% {
     opacity: 1;
   }
   100% {
-    right: 100vw;
+    transform: translateX(-100vw);
     opacity: 0;
   }
 }
