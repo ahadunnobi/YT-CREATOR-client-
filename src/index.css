@@ -202,38 +202,6 @@ section {
   .btn { padding: 0.6rem 1.2rem; font-size: 0.95rem !important; }
 }
 
-/* Floating Animation */
-.floating-subscribe {
-  position: fixed;
-  bottom: 5%;
-  color: rgba(255, 255, 255, 0.4);
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  animation: moveLeftToRight 15s linear infinite;
-  z-index: 10;
-  pointer-events: none;
-  user-select: none;
-}
-
-@keyframes moveLeftToRight {
-  0% {
-    left: -300px;
-    opacity: 0;
-  }
-  5% {
-    opacity: 1;
-  }
-  95% {
-    opacity: 1;
-  }
-  100% {
-    left: 100vw;
-    opacity: 0;
-  }
-}
 
 /* Plane Takeoff Animation */
 .btn-takeoff:hover .takeoff-icon {
