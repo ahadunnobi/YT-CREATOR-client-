@@ -40,8 +40,8 @@ const About = () => {
               style={{ borderRadius: '32px', overflow: 'hidden', height: '500px' }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80" 
-                alt="Cinematic Work" 
+                src="/about_me.jpg" 
+                alt="Arafatun Nobi" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </motion.div>
