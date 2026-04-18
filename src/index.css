@@ -226,3 +226,23 @@ section {
     opacity: 1;
   }
 }
+
+/* Flickering Animation */
+.flicker-text {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.2em;
+  animation: flicker 4s linear infinite;
+  pointer-events: none;
+  user-select: none;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+    filter: brightness(1.2) drop-shadow(0 0 12px var(--accent-secondary));
+  }
+  20%, 24%, 55% {
+    opacity: 0.4;
+    filter: brightness(0.8) drop-shadow(0 0 2px var(--accent-secondary));
+  }
+}
