@@ -1,10 +1,33 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
+import { motion } from 'framer-motion';
 
 const Layout = ({ children }) => {
+  const subscribeText = "PLEASE SUBSCRIBE";
+
   return (
     <div className="layout">
       <Navbar />
+      <div className="floating-subscribe gradient-text" style={{ display: 'flex' }}>
+        {subscribeText.split("").map((char, index) => (
+          <motion.span
+            key={index}
+            animate={{ 
+              y: [0, -12, 0],
+              rotate: [0, 8, -8, 0]
+            }}
+            transition={{ 
+              duration: 1.2, 
+              repeat: Infinity, 
+              delay: index * 0.1,
+              ease: "easeInOut"
+            }}
+            style={{ display: 'inline-block', whiteSpace: 'pre' }}
+          >
+            {char}
+          </motion.span>
+        ))}
+      </div>
       <main>
         {children}
       </main>

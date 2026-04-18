@@ -24,18 +24,6 @@ const Home = () => {
           <img src="/banner.png" alt="Banner" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         </div>
 
-        {/* Flickering Animation */}
-        <div className="flicker-text gradient-text" style={{ 
-          position: 'absolute', 
-          top: '2.5rem', 
-          right: '2.5rem', 
-          zIndex: 20, 
-          fontSize: '1.5rem', 
-          fontWeight: 'bold',
-          textShadow: '0 0 10px rgba(239, 68, 68, 0.5)'
-        }}>
-          PLEASE SUBSCRIBE
-        </div>
         
         <div className="container" style={{ marginTop: '-100px', position: 'relative', zIndex: 10 }}>
           <div style={{ textAlign: 'center' }}>

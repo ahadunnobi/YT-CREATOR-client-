@@ -227,22 +227,35 @@ section {
   }
 }
 
-/* Flickering Animation */
-.flicker-text {
-  font-family: "Bebas Neue", sans-serif;
-  letter-spacing: 0.2em;
-  animation: flicker 4s linear infinite;
+/* Floating Animation (Right to Left) */
+.floating-subscribe {
+  position: fixed;
+  bottom: 15%;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  animation: moveRightToLeft 18s linear infinite;
+  z-index: 10;
   pointer-events: none;
   user-select: none;
 }
 
-@keyframes flicker {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
-    opacity: 1;
-    filter: brightness(1.2) drop-shadow(0 0 12px var(--accent-secondary));
+@keyframes moveRightToLeft {
+  0% {
+    right: -300px;
+    opacity: 0;
   }
-  20%, 24%, 55% {
-    opacity: 0.4;
-    filter: brightness(0.8) drop-shadow(0 0 2px var(--accent-secondary));
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    right: 100vw;
+    opacity: 0;
   }
 }
