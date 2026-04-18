@@ -57,7 +57,16 @@ const Contact = () => {
   ];
 
   return (
-    <div className="contact-page" style={{ paddingTop: '8rem' }}>
+    <div className="contact-page" style={{ 
+      paddingTop: '8rem',
+      backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url("/contact_bg.jpg")',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed',
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column'
+    }}>
       <section>
         <div className="container" style={{ maxWidth: '1200px' }}>
           <div className="contact-grid">
