@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import { motion } from 'framer-motion';
+import { MessageCircle } from 'lucide-react';
 
 const Layout = ({ children }) => {
   return (
@@ -9,6 +10,21 @@ const Layout = ({ children }) => {
       <main>
         {children}
       </main>
+      
+      {/* WhatsApp FAB */}
+      <motion.a 
+        href="https://wa.me/8801779201898" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="whatsapp-fab"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <MessageCircle size={24} />
+        <span className="fab-text">Chat with Me</span>
+      </motion.a>
       <footer className="glass" style={{ padding: '3rem 0', marginTop: '5rem', borderLeft: 'none', borderRight: 'none', borderBottom: 'none' }}>
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '2rem' }}>

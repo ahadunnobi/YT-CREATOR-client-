@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Rocket, Play } from 'lucide-react';
+import { Menu, X, Rocket, Play, Users } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const MotionLink = motion(Link);
@@ -8,6 +8,7 @@ const MotionLink = motion(Link);
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [subCount, setSubCount] = useState(542891);
   const location = useLocation();
 
   useEffect(() => {
@@ -17,6 +18,17 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSubCount(prev => prev + Math.floor(Math.random() * 3));
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const formatCount = (num) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -90,13 +102,50 @@ const Navbar = () => {
                     fontWeight: '900',
                     fontFamily: '"Bebas Neue", sans-serif',
                     letterSpacing: '0.12em',
-                    color: '#ffffff',
-                    textShadow: '0 0 20px rgba(255, 255, 255, 0.8)'
+                    color: 'var(--accent-secondary)',
+                    textShadow: '0 0 20px rgba(239, 68, 68, 0.6)'
                   }}
                 >
                   {char}
                 </motion.span>
               ))}
+            </div>
+
+            {/* Subscriber Counter */}
+            <div style={{ 
+              marginLeft: '2rem', 
+              paddingLeft: '2rem', 
+              borderLeft: '2px solid var(--glass-border)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.8rem'
+            }}>
+              <div style={{ background: 'rgba(168, 85, 247, 0.2)', padding: '0.5rem', borderRadius: '10px', display: 'flex' }}>
+                <Users size={18} color="var(--accent-primary)" />
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', minWidth: '80px' }}>
+                <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.12em', lineHeight: 1 }}>Live Subscriber</span>
+                <div style={{ overflow: 'hidden', height: '1.6rem', marginTop: '0.1rem' }}>
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={subCount}
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -20, opacity: 0 }}
+                      transition={{ duration: 0.5, ease: "backOut" }}
+                      style={{ 
+                        fontFamily: '"Bebas Neue", sans-serif', 
+                        fontSize: '1.6rem', 
+                        color: 'var(--accent-primary)',
+                        display: 'block',
+                        lineHeight: 1
+                      }}
+                    >
+                      {formatCount(subCount)}
+                    </motion.span>
+                  </AnimatePresence>
+                </div>
+              </div>
             </div>
           </div>
         </Link>
