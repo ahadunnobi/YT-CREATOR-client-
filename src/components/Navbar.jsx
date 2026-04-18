@@ -59,7 +59,46 @@ const Navbar = () => {
           <div style={{ width: '40px', height: '40px', borderRadius: '10px', overflow: 'hidden', border: '2px solid var(--accent-secondary)' }}>
             <img src="/channels4_profile.jpg" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
-          <span style={{ fontFamily: '"Bebas Neue", sans-serif', fontSize: '1.75rem', letterSpacing: '0.05em' }}>ARAFATUN NOBI</span>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.75rem' }}>
+            <span style={{ fontFamily: '"Bebas Neue", sans-serif', fontSize: '1.75rem', letterSpacing: '0.05em' }}>ARAFATUN NOBI</span>
+            
+            {/* Dancing Subscribe Animation */}
+            <div style={{ 
+              display: 'flex', 
+              pointerEvents: 'none',
+              userSelect: 'none',
+              marginBottom: '0.2rem'
+            }}>
+              {"PLEASE SUBSCRIBE".split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  animate={{ 
+                    y: [0, -10, 0],
+                    opacity: [1, 0.9, 1],
+                    scale: [1, 1.25, 1]
+                  }}
+                  transition={{ 
+                    duration: 1.8, 
+                    repeat: Infinity, 
+                    delay: index * 0.08,
+                    ease: "easeInOut"
+                  }}
+                  style={{ 
+                    display: 'inline-block', 
+                    whiteSpace: 'pre',
+                    fontSize: '1.8rem', 
+                    fontWeight: '900',
+                    fontFamily: '"Bebas Neue", sans-serif',
+                    letterSpacing: '0.12em',
+                    color: '#ffffff',
+                    textShadow: '0 0 20px rgba(255, 255, 255, 0.8)'
+                  }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </div>
+          </div>
         </Link>
 
         {/* Desktop Nav */}

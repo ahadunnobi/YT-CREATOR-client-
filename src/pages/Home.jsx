@@ -43,6 +43,7 @@ const Home = () => {
               style={{ marginTop: '1.5rem' }}
             >
               <h1 className="hero-title">ARAFATUN <span className="gradient-text">NOBI</span></h1>
+              
               <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto' }} className="card-title">
                 Social Media Content Creator & Director capturing life's stories through a cinematic lens.
               </p>
